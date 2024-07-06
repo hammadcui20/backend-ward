@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // DB_URI=mongodb://localhost:27017/wardrobix
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: 'https://wardrobix.vercel.app', // Replace with your frontend URL
   credentials: true,
 }));
 app.use(express.json());
