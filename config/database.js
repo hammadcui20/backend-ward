@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDatabase = () => {
   mongoose
-    .connect('mongodb+srv://bakir0349:v3pg5L5yM9VrYid9@cluster0.zddmowc.mongodb.net/wardobe', {
+    .connect('mongodb://BADSHAH:badshah123@ac-bofjood-shard-00-00.9l6ioew.mongodb.net:27017,ac-bofjood-shard-00-01.9l6ioew.mongodb.net:27017,ac-bofjood-shard-00-02.9l6ioew.mongodb.net:27017/eshop?ssl=true&replicaSet=atlas-a12dlq-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
