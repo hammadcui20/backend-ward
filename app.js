@@ -10,7 +10,7 @@ const errorMiddleware = require("./middleware/error");
 
 // Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "backend/config/config.env" });
+  require("dotenv").config({ path: "config/config.env" });
 }
 // DB_URI=mongodb://localhost:27017/wardrobix
 
