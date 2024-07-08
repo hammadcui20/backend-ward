@@ -14,8 +14,12 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 // DB_URI=mongodb://localhost:27017/wardrobix
 
+// app.use(cors({
+//   origin: 'https://wardrobix.vercel.app', // Replace with your frontend URL
+//   credentials: true,
+// }));
 app.use(cors({
-  origin: 'https://wardrobix.vercel.app', // Replace with your frontend URL
+  origin: 'https://wardrobix-hammad-hussains-projects.vercel.app', // Replace with your frontend URL
   credentials: true,
 }));
 app.use(express.json());
