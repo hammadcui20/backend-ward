@@ -14,14 +14,14 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 // DB_URI=mongodb://localhost:27017/wardrobix
 
-// app.use(cors({
-//   origin: 'https://wardrobix.vercel.app', // Replace with your frontend URL
-//   credentials: true,
-// }));
 app.use(cors({
   origin: 'https://wardrobix.vercel.app', // Replace with your frontend URL
   credentials: true,
 }));
+// app.use(cors({
+//   origin:'http://localhost:3000',
+//   credentials: true,
+// }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,9 +40,9 @@ app.use("/api/v1", payment);
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+// });
 
 // Middleware for Errors
 app.use(errorMiddleware);

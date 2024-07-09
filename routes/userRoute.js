@@ -27,7 +27,7 @@ router.route("/password/reset/:token").put(resetPassword);
 
 router.route("/logout").get(logout);
 
-router.route("/me").get(isAuthenticatedUser, getUserDetails);
+router.route("/me").get(isAuthenticatedUser,getUserDetails);
 
 router.route("/password/update").put(isAuthenticatedUser, updatePassword);
 
@@ -35,12 +35,12 @@ router.route("/me/update").put(isAuthenticatedUser, updateProfile);
 
 router
   .route("/admin/users")
-  .get(isAuthenticatedUser, authorizeRoles("admin"), getAllUser);
+  .get(isAuthenticatedUser,  getAllUser);
 
 router
   .route("/admin/user/:id")
-  .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser)
-  .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
-  .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
+  .get(isAuthenticatedUser, getSingleUser)
+  .put(isAuthenticatedUser,  updateUserRole)
+  .delete(isAuthenticatedUser,  deleteUser);
 
 module.exports = router;
