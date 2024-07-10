@@ -60,7 +60,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
     expires: new Date(Date.now()),
     httpOnly: true,
   });
-
+  
   res.status(200).json({
     success: true,
     message: "Logged Out",
@@ -144,6 +144,8 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
 // Get User Detail
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
+  const token = req.body;
+  const id = token.id;
   const user = await User.findById(req.user.id);
 
   res.status(200).json({
